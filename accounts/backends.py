@@ -8,7 +8,7 @@ class LoginBackend(ModelBackend):
     def authenticate(self, request, username, password, **kwargs):
         UserModel = get_user_model()
         try:
-            user = UserModel.object.get(Q(username=username) | Q(email=username))
+            user = UserModel.objects.get(Q(username=username) | Q(email=username))
         except UserModel.DoesNotExist:
             return None
         if user.check_password(password):
