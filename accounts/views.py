@@ -17,3 +17,7 @@ class Login(View):
             return redirect('login')
         succes_message = messages.success(request, 'succeed')
         return redirect('login')
+
+
+class Signup(View):
+    pass
