@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.utils.translation import gettext_lazy as _
-
+from django.utils import timezone
 
 class CustomUserManager(UserManager):
     def create_user(self, username, password, email, phone_number, **extra_fields):
@@ -28,9 +28,14 @@ class CustomUserManager(UserManager):
 # Create your models here.
 class User(AbstractUser):
     phone_number = models.CharField(max_length=11, blank=False, null=False)
-    
+    creation_date = models.DateTimeField(_("creation date"), blank=True, null=True)
+
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'phone_number', 'password']
 
     objects = CustomUserManager()
-    
+
+    def save(self):
+        if not self.pk:
+            self.creation_date = timezone.now()
+        super().save()
