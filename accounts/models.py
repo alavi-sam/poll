@@ -28,14 +28,13 @@ class CustomUserManager(UserManager):
 # Create your models here.
 class User(AbstractUser):
     phone_number = models.CharField(max_length=11, blank=False, null=False)
-    creation_date = models.DateTimeField(_("creation date"), blank=True, null=True)
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'phone_number', 'password']
 
     objects = CustomUserManager()
 
-    def save(self):
+    def save(self, *args, **kwargs):
         if not self.pk:
             self.creation_date = timezone.now()
         super().save()
