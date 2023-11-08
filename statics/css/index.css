@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #eff7fc; /* Light blue background */
+  }
+
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    color: white;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Header Styles */
+  .header {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  /* Features Section */
+  .features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem 5%;
+  }
+
+  .feature-item {
+    flex-basis: 22%;
+    text-align: center;
+  }
+
+  /* Who We Are & What We've Done Section */
+  .info-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem 5%;
+  }
+
+  .info-block {
+    flex-basis: 48%;
+    text-align: center;
+  }
+
+  /* Partners Section */
+  .partners {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 2rem 5%;
+  }
+
+  .partner-logo {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
+  /* Footer Styles */
+  .footer {
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .info-img {
+        width: 100%;
+        height: 100%;
+  }

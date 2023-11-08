@@ -1,0 +1,125 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Poll - Your Polling Solution</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="/">Simple Poll</a>
+      <div>
+        <a href="#login">Log In</a>
+        <a href="#signup">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="header">
+      <h1>Engage Your Audience with Simple Poll</h1>
+    </div>
+
+    <div class="features">
+      <div class="feature-item">
+        <img
+          class="info-img"
+          src="{% static 'images/create-poll.jpeg' %}"
+          alt="Create Poll"
+        />
+        <p>Create your own poll with ease.</p>
+      </div>
+      <div class="feature-item">
+        <img
+          class="info-img"
+          src="{% static 'images/share-poll.svg' %}"
+          alt="Share Poll"
+        />
+        <p>Share with others to answer.</p>
+      </div>
+      <div class="feature-item">
+        <img class="info-img" src={% static 'images/stat-analysis.jpg' %}
+        alt="Statistical Analysis">
+        <p>Statistical analysis of results.</p>
+      </div>
+      <div class="feature-item">
+        <img class="info-img" src={% static 'images/raw-data.jpg' %} alt="Raw
+        Data">
+        <p>Access to raw data for insights.</p>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <div class="info-block">
+        <img src={% static 'images/who-we-are.png' %} alt="Who We Are" width="100%", height="100%">
+        <p>We are a team dedicated to simplifying your data collection.</p>
+      </div>
+      <div class="info-block">
+        <img src={% static 'images/what-we-have-done.svg' %} alt="What We Have Done" width="100%" height="100%">
+        <p>
+          Our platform has empowered countless businesses to engage with their
+          audience and glean actionable insights.
+        </p>
+      </div>
+    </div>
+
+    <div class="partners">
+      <h2>Our Trusted Partners</h2>
+      <div class="swiper-container partner-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide partner-logo">
+            <img src="logo1.png" alt="Company 1" />
+          </div>
+          <div class="swiper-slide partner-logo">
+            <img src="logo2.png" alt="Company 2" />
+          </div>
+          <!-- ... other logos ... -->
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2023 Simple Poll. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".partner-container", {
+        slidesPerView: 5,
+        spaceBetween: 10,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          // when window width is <= 499px
+          499: {
+            slidesPerView: 1,
+            spaceBetweenSlides: 30,
+          },
+          // when window width is <= 999px
+          999: {
+            slidesPerView: 3,
+            spaceBetweenSlides: 40,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
