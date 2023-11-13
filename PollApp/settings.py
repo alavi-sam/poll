@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'core',
+    'polls'
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
