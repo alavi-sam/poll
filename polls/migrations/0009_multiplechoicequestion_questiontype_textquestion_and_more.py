@@ -25,10 +25,10 @@ class Migration(migrations.Migration):
             name = 'Question',
             fields = [
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('text', models.TextField(null=True)),
-                ('content_type', models.ForeignKey(ContentType, on_delete=models.CASCADE, null=True)),
-                ('object_id', models.PositiveIntegerField(null=True)),
-                ('content_object', GenericForeignKey('content_type', 'object_id'))
+                # ('text', models.TextField(null=True)),
+                # ('content_type', models.ForeignKey('contenttype', on_delete=models.CASCADE, null=True)),
+                # ('object_id', models.PositiveIntegerField(null=True)),
+                # ('content_object', GenericForeignKey('content_type', 'object_id'))
             ]
         ),
         migrations.CreateModel(
@@ -44,21 +44,6 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('max_length', models.PositiveIntegerField(default=100)),
             ],
-        ),
-        migrations.DeleteModel(
-            name='DropDown',
-        ),
-        migrations.DeleteModel(
-            name='MultipleChoice',
-        ),
-        migrations.DeleteModel(
-            name='Poll',
-        ),
-        migrations.DeleteModel(
-            name='StarRating',
-        ),
-        migrations.DeleteModel(
-            name='Subjective',
         ),
         migrations.AddField(
             model_name='question',
