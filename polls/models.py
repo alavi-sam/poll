@@ -5,11 +5,11 @@ from django.contrib.contenttypes.models import ContentType
 
 
 class Question(models.Model):
-    text = models.TextField()
+    text = models.TextField(null=True)
 
     # Generic relation for question types
-    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
-    object_id = models.PositiveIntegerField()
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE, null=True)
+    object_id = models.PositiveIntegerField(null=True)
     content_object = GenericForeignKey('content_type', 'object_id')
 
     def __str__(self):
