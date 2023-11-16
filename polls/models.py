@@ -61,5 +61,3 @@ class Answer(models.Model):
           answered question {self.question.title} with {self.choice.value} choice."
 
 
-class Test(models.Model):
-    pass
